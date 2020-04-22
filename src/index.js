@@ -1,15 +1,15 @@
 import "./styles.css";
-let tempLetter;
+let tempLetter = "F";
 document.getElementById("app").innerHTML = `
 <h1>Temperature converter</h1>
 <div>
-  <p>Enter a temperature to convert:</sup>
+  <p id= "p">Enter a temperature to convert:</sup>
   <br>
   
     <label for="temp-in"></label>
-    
-  <input type="number" id="temp-in" value="0"></input>
-
+    <input type="number" id="temp-in" value="0"></input>
+    <a id="varT">${tempLetter}<sup>o</sup></a>
+ 
   <br>
     <form id="far-cel" class="radio-buttons">
       <input type="radio" id="far" class="radios" name="temp-select" value="Farenheit" checked>Farenheit</input>
@@ -25,11 +25,8 @@ radioSelect.onclick = function() {
   for (const radioType of radioSelected) {
     if (radioType.checked) {
       tempLetter = radioType.value[0];
-      //  console.log(tempLetter)
-      var changeLetter = document.querySelector("#temp-in");
-      changeLetter.outerHTML = `<input type="number" id="temp-in" value="0"> ${tempLetter}<sup>o</sup></input>`;
-      console.log(changeLetter.outerHTML);
-
+      let tSwitch= document.getElementById("varT")
+      tSwitch.innerHTML =`${tempLetter}<sup>o</sup>`
       break;
     }
   }
