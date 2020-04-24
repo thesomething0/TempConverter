@@ -1,0 +1,5 @@
+body{
+    background-color: lightgray;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.349) 0%,rgba(0,0,0,0.65) 100%);
+    font-family: arial;
+}
