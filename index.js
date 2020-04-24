@@ -57,20 +57,13 @@ subButn.onclick = function() {
     oppositeValue = "F";
     bgTemp = finalTemp;
   }
-  if (bgTemp >= 100) {
-    var bgColor = "#ff0000";
-  } else if ((bgTemp < 100) & (bgTemp >= 75)) {
-    bgColor = "#ffff00";
-  } else if ((bgTemp < 75) & (bgTemp >= 62)) {
-    bgColor = "#00ff00";
-  } else if ((bgTemp < 62) & (bgTemp >= 32)) {
-    bgColor = "#00ffff";
-  } else if ((bgTemp < 32) & (bgTemp >= 0)) {
-    bgColor = "#0000ff";
+  if ((bgTemp >= 0) & (bgTemp <= 100)) {
+    var bgColor = `hsl(${Math.abs(bgTemp - 100) * 2.4},100%,50%)`;
   } else if (bgTemp < 0) {
-    bgColor = "#ff00ff";
+    bgColor = "blue";
+  } else {
+    bgColor = "red";
   }
-  console.log(bgColor);
 
   document.body.style.setProperty("--bgHeat", bgColor);
   let returnTemp = document.createElement("p");
